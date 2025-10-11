@@ -1,0 +1,646 @@
+fb:
+  quiz_types:
+    car:
+      languages:
+        en:
+          primary_text: "Ready to pass your car theory test? Practice 45 exam-style questions free today."
+          headline: "Pass the car theory test fast"
+          description: "Free lessons, instant feedback, and smart revisions."
+          call_to_action: "Start Free Test"
+        no:
+          primary_text: "Klar for å bestå bilteorien? Øv på 45 eksamenslignende spørsmål gratis i dag."
+          headline: "Bestå bilteorien raskt"
+          description: "Gratis teori, umiddelbar tilbakemelding og smarte repetisjoner."
+          call_to_action: "Start gratis test"
+        da:
+          primary_text: "Klar til at bestå bilteorien? Træn 45 eksamenslignende spørgsmål gratis i dag."
+          headline: "Bestå bilteorien hurtigt"
+          description: "Gratis teori, øjeblikkelig feedback og smarte repetitioner."
+          call_to_action: "Start gratis test"
+    bus:
+      languages:
+        en:
+          primary_text: "Need your bus license? Break down 45 real exam questions with tailored lessons and tracking."
+          headline: "Ace the bus theory exam"
+          description: "Built for professional drivers with adaptive review."
+          call_to_action: "Prep Now"
+        no:
+          primary_text: "Skal du ta busslappen? Jobb gjennom 45 realistiske spørsmål med tilpasset teori."
+          headline: "Bestå bussteorien på første forsøk"
+          description: "Laget for yrkessjåfører med målrettet repetisjon."
+          call_to_action: "Forbered deg nå"
+        da:
+          primary_text: "Skal du have buskørekort? Klar 45 realistiske spørgsmål med målrettet teori."
+          headline: "Bestå busteorien i første forsøg"
+          description: "Til chauffører med fokuseret repetition."
+          call_to_action: "Forbered dig nu"
+    truck:
+      languages:
+        en:
+          primary_text: "Pass the heavy vehicle exam with 45 scenario drills, free lessons, and clear progress charts."
+          headline: "Beat the truck theory test"
+          description: "Heavy-vehicle practice built for busy drivers."
+          call_to_action: "Start Training"
+        no:
+          primary_text: "Bestå tungbilprøven med 45 scenarier, gratis teori og tydelig fremdrift."
+          headline: "Bestå lastebilteorien lett"
+          description: "Tungbiltrening laget for travle sjåfører."
+          call_to_action: "Start treningen"
+        da:
+          primary_text: "Bestå tungvognsprøven med 45 scenarier, gratis teori og klar fremgang."
+          headline: "Bestå lastbilteorien let"
+          description: "Tungvognstræning til travle chauffører."
+          call_to_action: "Start træningen"
+    tractor:
+      languages:
+        en:
+          primary_text: "Master every farm-road rule with 45 realistic tractor questions and bite-sized guides."
+          headline: "Pass tractor theory stress-free"
+          description: "Short lessons, instant answers, no guesswork."
+          call_to_action: "Try Free"
+        no:
+          primary_text: "Lær alle gårds- og vegregler med 45 realistiske traktorspørsmål og korte guider."
+          headline: "Bestå traktorteorien uten stress"
+          description: "Korte leksjoner og raske svar – uten gjetting."
+          call_to_action: "Prøv gratis"
+        da:
+          primary_text: "Lær alle mark- og vejregler med 45 realistiske traktorspørgsmål og korte guider."
+          headline: "Bestå traktorteorien uden stress"
+          description: "Korte lektioner og hurtige svar uden gætteri."
+          call_to_action: "Prøv gratis"
+    motorcycle:
+      languages:
+        en:
+          primary_text: "Ride through the MC exam with 45 scenario drills, free theory, and instant ride-ready feedback."
+          headline: "Crush the motorcycle theory exam"
+          description: "Stay confident with motorcycle-focused practice."
+          call_to_action: "Rev Up"
+        no:
+          primary_text: "Kjør deg klar for MC-prøven med 45 scenarier, gratis teori og umiddelbar feedback."
+          headline: "Bestå motorsykkelteorien nå"
+          description: "Hold selvtilliten oppe med MC-fokusert øving."
+          call_to_action: "Kom i gang"
+        da:
+          primary_text: "Kør gennem MC-prøven med 45 scenarier, gratis teori og øjeblikkelig feedback."
+          headline: "Bestå motorcykelteorien nu"
+          description: "Selvsikker træning målrettet motorcyklister."
+          call_to_action: "Kom i gang"
+    moped:
+      languages:
+        en:
+          primary_text: "Nail the moped theory on your first try with 45 quick-fire questions and simple tips."
+          headline: "Win the moped theory test"
+          description: "Bite-sized lessons for fast progress."
+          call_to_action: "Start Free Practice"
+        no:
+          primary_text: "Bestå mopedteorien første gang med 45 korte spørsmål og enkle tips."
+          headline: "Bestå mopedteorien første gang"
+          description: "Korte leksjoner for rask fremgang."
+          call_to_action: "Start gratis øving"
+        da:
+          primary_text: "Bestå knallertteorien i første forsøg med 45 korte spørgsmål og klare tips."
+          headline: "Bestå knallertteorien første gang"
+          description: "Korte lektioner til hurtig fremgang."
+          call_to_action: "Start gratis træning"
+    boat:
+      languages:
+        en:
+          primary_text: "Chart your boating license with 45 realistic navigation questions and shore up every rule."
+          headline: "Sail through the boat license test"
+          description: "Free boating theory and instant corrections."
+          call_to_action: "Chart Course"
+        no:
+          primary_text: "Naviger mot båtførerprøven med 45 realistiske spørsmål og full kontroll på reglene."
+          headline: "Bestå båtførerprøven enkelt"
+          description: "Gratis båtteori og umiddelbare korreksjoner."
+          call_to_action: "Ta roret"
+        da:
+          primary_text: "Naviger mod speedbådscertifikatet med 45 realistiske spørgsmål og fuldt regeloverblik."
+          headline: "Bestå speedbådscertifikatet nemt"
+          description: "Gratis sejlads-teori og øjeblikkelige rettelser."
+          call_to_action: "Tag roret"
+    trailer:
+      languages:
+        en:
+          primary_text: "Confidently earn your trailer endorsement with 45 towing scenarios and free checklists."
+          headline: "Master the trailer endorsement"
+          description: "Tailored for BE candidates with supportive feedback."
+          call_to_action: "Check In"
+        no:
+          primary_text: "Få kontroll på tilhengerbeviset med 45 trekk-scenarier og gratis sjekklister."
+          headline: "Bestå tilhengerteorien med kontroll"
+          description: "Lag for BE-kandidater med trygg tilbakemelding."
+          call_to_action: "Sjekk inn"
+        da:
+          primary_text: "Tag trailergodkendelsen med 45 trækscenarier og gratis tjeklister."
+          headline: "Bestå trailerteorien med ro"
+          description: "Til BE-kandidater med sikker feedback."
+          call_to_action: "Tjek ind"
+insta:
+  formats:
+    feed:
+      quiz_types:
+        car:
+          languages:
+            en:
+              caption: "45 car theory questions. Free lessons. Exam-ready in days."
+              hook: "Swipe for your free car theory test."
+              hashtags: ["#theorytest", "#drivingschool", "#freelesson"]
+            no:
+              caption: "45 bilteori-spørsmål. Gratis leksjoner. Klar for prøve på få dager."
+              hook: "Sveip for gratis bilteoritest."
+              hashtags: ["#bilteori", "#førerkort", "#gratisøving"]
+            da:
+              caption: "45 bilteori-spørgsmål. Gratis lektioner. Prøveklar på få dage."
+              hook: "Swipe for gratis bilteoritest."
+              hashtags: ["#bilteori", "#kørekort", "#gratistræning"]
+        bus:
+          languages:
+            en:
+              caption: "Bus license coming up? Drill 45 pro-level questions with adaptive review."
+              hook: "Hold your bus badge after this session."
+              hashtags: ["#busdriver", "#theoryprep", "#professionaldriver"]
+            no:
+              caption: "Skal du ta busslappen? Øv 45 pro-spørsmål med tilpasset repetisjon."
+              hook: "Hold bussbeviset klart etter økten."
+              hashtags: ["#bussjåfør", "#teoriklar", "#yrkessjåfør"]
+            da:
+              caption: "Skal du have buskørekort? Øv 45 pro-spørgsmål med målrettet repetition."
+              hook: "Hold busbeviset klar efter sessionen."
+              hashtags: ["#buschauffør", "#teoriklar", "#professionelchauffør"]
+        truck:
+          languages:
+            en:
+              caption: "Heavy-vehicle exam? 45 realistic scenarios + progress tracking in one app."
+              hook: "Swipe up and unlock your truck license."
+              hashtags: ["#truckdriver", "#heavyvehicle", "#theorytraining"]
+            no:
+              caption: "Tungbilprøve? 45 realistiske scenarier + fremdrift i én app."
+              hook: "Sveip og lås opp lastebilbeviset."
+              hashtags: ["#lastebil", "#tungbil", "#teoritrening"]
+            da:
+              caption: "Tungvognsprøve? 45 realistiske scenarier + fremskridt i én app."
+              hook: "Swipe og få dit lastbilbevis."
+              hashtags: ["#lastbil", "#tungvogn", "#teoritræning"]
+        tractor:
+          languages:
+            en:
+              caption: "Farm road ready: 45 tractor theory questions with instant answers."
+              hook: "Swipe for free tractor drills."
+              hashtags: ["#tractorteori", "#landlife", "#farmlicense"]
+            no:
+              caption: "Klar for traktorlappen: 45 spørsmål med raske svar."
+              hook: "Sveip for gratis traktortrening."
+              hashtags: ["#traktorlappen", "#gårdsliv", "#teoriprøve"]
+            da:
+              caption: "Klar til traktorkortet: 45 spørgsmål med hurtige svar."
+              hook: "Swipe for gratis traktordrills."
+              hashtags: ["#traktorkort", "#landliv", "#teoriprøve"]
+        motorcycle:
+          languages:
+            en:
+              caption: "MC theory made simple: 45 scenario drills and instant feedback."
+              hook: "Swipe to gear up for the exam."
+              hashtags: ["#motorcyclelicense", "#theorytest", "#ridefree"]
+            no:
+              caption: "MC-teori gjort enkelt: 45 scenarier og umiddelbar feedback."
+              hook: "Sveip for å bli klar til prøven."
+              hashtags: ["#mclappen", "#teoritest", "#kjørfritt"]
+            da:
+              caption: "MC-teori uden bøvl: 45 scenarier og øjeblikkelig feedback."
+              hook: "Swipe for at blive prøveklar."
+              hashtags: ["#mckort", "#teoriprøve", "#kørfrit"]
+        moped:
+          languages:
+            en:
+              caption: "Beat the moped test first try with 45 fast questions and easy tips."
+              hook: "Swipe to start your free moped quiz."
+              hashtags: ["#mopedlicense", "#teoriprep", "#firsttry"]
+            no:
+              caption: "Bestå mopedprøven første gang med 45 raske spørsmål og enkle tips."
+              hook: "Sveip for gratis mopedquiz."
+              hashtags: ["#mopedlappen", "#teoriøving", "#førsteforsøk"]
+            da:
+              caption: "Bestå knallertprøven første gang med 45 hurtige spørgsmål og klare tips."
+              hook: "Swipe for gratis knallertquiz."
+              hashtags: ["#knallertkort", "#teoritræning", "#førsteforsøg"]
+        boat:
+          languages:
+            en:
+              caption: "Boat license loading: 45 navigation questions to shore up every rule."
+              hook: "Swipe for your free boat quiz."
+              hashtags: ["#boatlicense", "#navigation", "#examready"]
+            no:
+              caption: "Båtførerbevis i sikte: 45 navigasjonsspørsmål sikrer kontroll."
+              hook: "Sveip for gratis båtførerquiz."
+              hashtags: ["#båtførerprøven", "#navigasjon", "#klarforprøven"]
+            da:
+              caption: "Speedbådscertifikat på vej: 45 navigationsspørgsmål giver fuld kontrol."
+              hook: "Swipe for gratis bådquiz."
+              hashtags: ["#speedbåd", "#navigation", "#prøveklar"]
+        trailer:
+          languages:
+            en:
+              caption: "Trailer endorsement? Practice 45 towing scenarios with supportive checklists."
+              hook: "Swipe and secure your BE endorsement."
+              hashtags: ["#trailerlicense", "#towing", "#drivingschool"]
+            no:
+              caption: "Tilhengerbevis? Øv 45 trekk-scenarier med støttende sjekklister."
+              hook: "Sveip og sikre BE-beviset."
+              hashtags: ["#tilhenger", "#trekking", "#førerkort"]
+            da:
+              caption: "Trailergodkendelse? Øv 45 trækscenarier med sikre tjeklister."
+              hook: "Swipe og sikr BE-beviset."
+              hashtags: ["#trailer", "#træk", "#køreskole"]
+tiktok:
+  quiz_types:
+    car:
+      languages:
+        en:
+          hook: "45 car theory questions in 45 seconds—can you beat it?"
+          script_prompt: "Show timer countdown while answering car theory questions and reveal 90% pass rate graphic."
+          call_to_action: "Tap for free quiz"
+          keywords: ["car theory", "driving test", "study hack"]
+        no:
+          hook: "45 bilteori-spørsmål på 45 sekunder – klarer du det?"
+          script_prompt: "Vis nedtelling mens du svarer, avslutt med graf: 90 % bestått."
+          call_to_action: "Trykk for gratis quiz"
+          keywords: ["bilteori", "førerkort", "studietips"]
+        da:
+          hook: "45 bilteori-spørgsmål på 45 sekunder – klarer du den?"
+          script_prompt: "Vis countdown, svar på spørgsmål, slut med grafik: 90 % består."
+          call_to_action: "Tryk for gratis quiz"
+          keywords: ["bilteori", "kørekort", "studiehack"]
+    bus:
+      languages:
+        en:
+          hook: "Future bus drivers—try these pro-level theory questions!"
+          script_prompt: "Start in uniform, tap through tough bus signs, end with confidence meter."
+          call_to_action: "Tap to prep"
+          keywords: ["bus license", "professional driver", "theory exam"]
+        no:
+          hook: "Framtidige bussjåfører – test disse pro-spørsmålene!"
+          script_prompt: "Start i uniform, trykk gjennom vanskelige skilt, avslutt med trygghetsmåler."
+          call_to_action: "Trykk for å øve"
+          keywords: ["busslappen", "yrkessjåfør", "teoriprøve"]
+        da:
+          hook: "Fremtidens buschauffører – prøv de her pro-spørgsmål!"
+          script_prompt: "Start i uniform, tap igennem svære skilte, slut med selvtillidsmåler."
+          call_to_action: "Tryk for at øve"
+          keywords: ["buskørekort", "professionel chauffør", "teoriprøve"]
+    truck:
+      languages:
+        en:
+          hook: "Heavy vehicle hacks you need before the exam."
+          script_prompt: "Show cab POV, answer scenario prompts, overlay progress tracker animation."
+          call_to_action: "Tap for drills"
+          keywords: ["truck test", "heavy vehicle", "exam prep"]
+        no:
+          hook: "Tungbil-hacks du trenger før prøven."
+          script_prompt: "Vis førerhus-perspektiv, svar på scenarier, legg på fremdriftsanimasjon."
+          call_to_action: "Trykk for økter"
+          keywords: ["tungbilprøve", "lastebil", "eksamenstrening"]
+        da:
+          hook: "Tungvogn-hacks du skal kunne før prøven."
+          script_prompt: "Vis førerhus POV, svar på scenarier, læg fremgangsgrafik på."
+          call_to_action: "Tryk for træning"
+          keywords: ["tungvognsprøve", "lastbil", "eksamenstræning"]
+    tractor:
+      languages:
+        en:
+          hook: "Farm crew: can you solve these tractor theory traps?"
+          script_prompt: "Cut between field scenes and quiz screenshots, flash instant feedback."
+          call_to_action: "Tap for free practice"
+          keywords: ["tractor license", "farm life", "theory quiz"]
+        no:
+          hook: "Gårdsfolk: klarer du disse traktorfellene?"
+          script_prompt: "Klipp mellom åker og quiz, vis umiddelbar feedback."
+          call_to_action: "Trykk for gratis øving"
+          keywords: ["traktorlappen", "gårdsliv", "teoriquiz"]
+        da:
+          hook: "Landhold: kan I løse disse traktorfælder?"
+          script_prompt: "Klip mellem mark og quiz, vis øjeblikkelig feedback."
+          call_to_action: "Tryk for gratis træning"
+          keywords: ["traktorkort", "landliv", "teoriquiz"]
+    motorcycle:
+      languages:
+        en:
+          hook: "MC theory myths busted in 30 seconds."
+          script_prompt: "Alternate rider POV and app walkthrough, highlight instant feedback."
+          call_to_action: "Tap to ride smarter"
+          keywords: ["motorcycle theory", "ride safe", "license test"]
+        no:
+          hook: "MC-myter knust på 30 sekunder."
+          script_prompt: "Veksle mellom førerperspektiv og app, fremhev umiddelbar feedback."
+          call_to_action: "Trykk for å kjøre smartere"
+          keywords: ["mc-teori", "kjør trygt", "lappen"]
+        da:
+          hook: "MC-myter knust på 30 sekunder."
+          script_prompt: "Skift mellem førerperspektiv og app, vis øjeblikkelig feedback."
+          call_to_action: "Tryk for at køre smartere"
+          keywords: ["mc-teori", "kør sikkert", "kørekort"]
+    moped:
+      languages:
+        en:
+          hook: "Beat the moped test with these rapid-fire questions."
+          script_prompt: "Flash question-answer pairs, finish with first-try badge."
+          call_to_action: "Tap for free quiz"
+          keywords: ["moped test", "first try", "study hack"]
+        no:
+          hook: "Bestå mopedprøven med disse kjappe spørsmålene."
+          script_prompt: "Vis spørsmål-svar raskt, avslutt med førstegangsmerke."
+          call_to_action: "Trykk for gratis quiz"
+          keywords: ["mopedprøve", "førsteforsøk", "studietips"]
+        da:
+          hook: "Bestå knallertprøven med de her hurtige spørgsmål."
+          script_prompt: "Vis spørgsmål-svar hurtigt, slut med første-forsøg badge."
+          call_to_action: "Tryk for gratis quiz"
+          keywords: ["knallertprøve", "førsteforsøg", "studiehack"]
+    boat:
+      languages:
+        en:
+          hook: "Can you read these boating signals?"
+          script_prompt: "Show buoy footage, cut to quiz explanations, end with pass notification."
+          call_to_action: "Tap to navigate"
+          keywords: ["boat license", "navigation", "exam prep"]
+        no:
+          hook: "Kan du lese disse sjøsignalene?"
+          script_prompt: "Vis bøyer, klipp til quizforklaringer, avslutt med bestått-varsel."
+          call_to_action: "Trykk for å navigere"
+          keywords: ["båtførerprøven", "navigasjon", "eksamen"]
+        da:
+          hook: "Kan du læse de her søsignaler?"
+          script_prompt: "Vis bøjer, klip til quizforklaringer, slut med bestået-besked."
+          call_to_action: "Tryk for at navigere"
+          keywords: ["speedbådscertifikat", "navigation", "eksamen"]
+    trailer:
+      languages:
+        en:
+          hook: "Trailer backing challenge: would you pass this scenario?"
+          script_prompt: "Start with tight parking lot, overlay quiz choices, reveal correct maneuver."
+          call_to_action: "Tap for BE drills"
+          keywords: ["trailer test", "BE license", "towing"]
+        no:
+          hook: "Tilhenger-utfordring: ville du klart dette scenariet?"
+          script_prompt: "Start i trang parkering, vis svaralternativer, avslør riktig manøver."
+          call_to_action: "Trykk for BE-økter"
+          keywords: ["tilhengerprøve", "BE-lappen", "trekking"]
+        da:
+          hook: "Trailer-udfordring: ville du bestå det her scenarie?"
+          script_prompt: "Start på trang parkering, vis svarmuligheder, afslør korrekt manøvre."
+          call_to_action: "Tryk for BE-træning"
+          keywords: ["trailerkørekort", "BE-licens", "træk"]
+snap:
+  quiz_types:
+    car:
+      languages:
+        en:
+          top_snap_copy: "45 car questions. Zero cost."
+          body_text: "Swipe up for instant practice and guaranteed insights before exam day."
+          swipe_up_text: "Start free"
+        no:
+          top_snap_copy: "45 bilspørsmål. Null kostnad."
+          body_text: "Sveip opp for umiddelbar trening og kontroll før prøvedagen."
+          swipe_up_text: "Start gratis"
+        da:
+          top_snap_copy: "45 bilspørgsmål. Ingen pris."
+          body_text: "Swipe op for øjeblikkelig træning og fuldt overblik før prøven."
+          swipe_up_text: "Start gratis"
+    bus:
+      languages:
+        en:
+          top_snap_copy: "Bus badge in sight?"
+          body_text: "Swipe up to tackle professional bus theory scenarios with feedback."
+          swipe_up_text: "Train now"
+        no:
+          top_snap_copy: "Bussbevis i sikte?"
+          body_text: "Sveip opp og løs proffe buss-scenarier med feedback."
+          swipe_up_text: "Tren nå"
+        da:
+          top_snap_copy: "Busbevis i sigte?"
+          body_text: "Swipe op og løs pro busteori-scenarier med feedback."
+          swipe_up_text: "Træn nu"
+    truck:
+      languages:
+        en:
+          top_snap_copy: "Heavy vehicle hero?"
+          body_text: "Swipe up to drill 45 truck theory challenges with live feedback."
+          swipe_up_text: "Drill now"
+        no:
+          top_snap_copy: "Tungbilhelt?"
+          body_text: "Sveip opp og tren på 45 lastebilutfordringer med direkte feedback."
+          swipe_up_text: "Øv nå"
+        da:
+          top_snap_copy: "Tungvognshelt?"
+          body_text: "Swipe op og træn 45 lastbiludfordringer med direkte feedback."
+          swipe_up_text: "Øv nu"
+    tractor:
+      languages:
+        en:
+          top_snap_copy: "Unlock your tractor license."
+          body_text: "Swipe up for farm-road rules, 45 quick questions, and instant answers."
+          swipe_up_text: "Get drills"
+        no:
+          top_snap_copy: "Lås opp traktorlappen."
+          body_text: "Sveip opp for gårdsregler, 45 spørsmål og raske svar."
+          swipe_up_text: "Få økter"
+        da:
+          top_snap_copy: "Lås op for traktorkortet."
+          body_text: "Swipe op for regler, 45 spørgsmål og hurtige svar."
+          swipe_up_text: "Få træning"
+    motorcycle:
+      languages:
+        en:
+          top_snap_copy: "MC exam coming?"
+          body_text: "Swipe up to ride through 45 motorcycle theory scenarios with support."
+          swipe_up_text: "Ride smarter"
+        no:
+          top_snap_copy: "MC-prøve på vei?"
+          body_text: "Sveip opp for 45 MC-scenarier med støtte."
+          swipe_up_text: "Kjør smartere"
+        da:
+          top_snap_copy: "MC-prøve på vej?"
+          body_text: "Swipe op for 45 MC-scenarier med støtte."
+          swipe_up_text: "Kør smartere"
+    moped:
+      languages:
+        en:
+          top_snap_copy: "First try moped pass."
+          body_text: "Swipe up for 45 fast questions and coaching tips."
+          swipe_up_text: "Try free"
+        no:
+          top_snap_copy: "Bestå moped på første forsøk."
+          body_text: "Sveip opp for 45 raske spørsmål og veiledning."
+          swipe_up_text: "Prøv gratis"
+        da:
+          top_snap_copy: "Bestå knallert i første forsøg."
+          body_text: "Swipe op for 45 hurtige spørgsmål og vejledning."
+          swipe_up_text: "Prøv gratis"
+    boat:
+      languages:
+        en:
+          top_snap_copy: "Boat license in reach."
+          body_text: "Swipe up for navigation drills and 45 exam-style questions."
+          swipe_up_text: "Set sail"
+        no:
+          top_snap_copy: "Båtførerbevis innen rekkevidde."
+          body_text: "Sveip opp for navigasjonstrening og 45 eksamensspørsmål."
+          swipe_up_text: "Sett seil"
+        da:
+          top_snap_copy: "Speedbådscertifikat lige her."
+          body_text: "Swipe op for navigationstræning og 45 eksamensspørgsmål."
+          swipe_up_text: "Stik til søs"
+    trailer:
+      languages:
+        en:
+          top_snap_copy: "Own every towing scenario."
+          body_text: "Swipe up for 45 trailer drills and BE-specific checklists."
+          swipe_up_text: "Prep free"
+        no:
+          top_snap_copy: "Mestring av hvert trekk-scenario."
+          body_text: "Sveip opp for 45 tilhengerøvelser og BE-sjekklister."
+          swipe_up_text: "Øv gratis"
+        da:
+          top_snap_copy: "Mestr hvert trækscenarie."
+          body_text: "Swipe op for 45 trailereøvelser og BE-tjeklister."
+          swipe_up_text: "Øv gratis"
+google:
+  campaign_types:
+    performance_max:
+      asset_groups:
+        car:
+          languages:
+            en:
+              headlines: ["Pass the car theory test fast", "Free car theory lessons", "45 exam-style car questions"]
+              descriptions: ["Practice free with instant feedback and smart revisions before exam day.", "Track your progress and master every car theory topic in minutes a day."]
+              path: "car/theory-test"
+              callouts: ["Free first test", "45 question drills", "Instant feedback"]
+            no:
+              headlines: ["Bestå bilteorien raskt", "Gratis bilteori", "45 eksamensspørsmål"]
+              descriptions: ["Øv gratis med umiddelbar feedback og smarte repetisjoner.", "Følg fremdriften og mestre alle temaer på få minutter daglig."]
+              path: "bil/teori"
+              callouts: ["Gratis test", "45 spørsmål", "Umiddelbar feedback"]
+            da:
+              headlines: ["Bestå bilteorien hurtigt", "Gratis bilteori", "45 eksamensspørgsmål"]
+              descriptions: ["Øv gratis med øjeblikkelig feedback og smarte repetitioner.", "Følg fremskridtet og mest alle emner på få minutter dagligt."]
+              path: "bil/teori"
+              callouts: ["Gratis test", "45 spørgsmål", "Øjeblikkelig feedback"]
+        bus:
+          languages:
+            en:
+              headlines: ["Ace the bus theory exam", "Bus theory made simple", "Professional driver practice"]
+              descriptions: ["Prepare with 45 tailored scenarios and adaptive review built for bus drivers.", "Free lessons that cover every bus theory topic with smart tracking."]
+              path: "bus/theory"
+              callouts: ["Pro lessons", "Adaptive review", "Free first test"]
+            no:
+              headlines: ["Bestå bussteorien", "Enkel bussteori", "Proff sjåførtrening"]
+              descriptions: ["Forbered deg med 45 tilpassede scenarier og adaptiv repetisjon.", "Gratis leksjoner som dekker alle busstemaer med smart sporing."]
+              path: "buss/teori"
+              callouts: ["Pro leksjoner", "Adaptiv repetisjon", "Gratis test"]
+            da:
+              headlines: ["Bestå busteorien", "Nem busteori", "Pro chaufførtræning"]
+              descriptions: ["Forbered dig med 45 tilpassede scenarier og adaptiv repetition.", "Gratis lektioner der dækker alle bustemaer med smart tracking."]
+              path: "bus/teori"
+              callouts: ["Pro lektioner", "Adaptiv repetition", "Gratis test"]
+        truck:
+          languages:
+            en:
+              headlines: ["Beat the truck theory test", "Heavy vehicle practice", "45 truck scenarios"]
+              descriptions: ["Train with realistic heavy vehicle cases, instant feedback, and progress charts.", "Free truck theory lessons for busy drivers needing a pass fast."]
+              path: "truck/theory"
+              callouts: ["Heavy vehicle", "Progress charts", "Instant feedback"]
+            no:
+              headlines: ["Bestå lastebilteorien", "Tungbiltrening", "45 tunge scenarier"]
+              descriptions: ["Tren med realistiske tunge kjøretøy-scenarier og tydelig fremdrift.", "Gratis tungbilteori for sjåfører som må bestå raskt."]
+              path: "lastebil/teori"
+              callouts: ["Tungbil", "Fremdrift", "Feedback"]
+            da:
+              headlines: ["Bestå lastbilteorien", "Tungvognstræning", "45 scenarier"]
+              descriptions: ["Træn med realistiske tungvognsscenarier og klar fremskridt.", "Gratis lastbilteori til chauffører der vil bestå hurtigt."]
+              path: "lastbil/teori"
+              callouts: ["Tungvogn", "Fremskridt", "Feedback"]
+        tractor:
+          languages:
+            en:
+              headlines: ["Pass tractor theory", "Farm-road rules", "45 tractor questions"]
+              descriptions: ["Cover every tractor scenario with free lessons and instant answers.", "Simple guides that lock in tractor rules before the exam."]
+              path: "tractor/theory"
+              callouts: ["Farm ready", "Instant answers", "Free lessons"]
+            no:
+              headlines: ["Bestå traktorteorien", "Regler for gårdsvei", "45 traktorspørsmål"]
+              descriptions: ["Dekker alle traktorscenarier med gratis leksjoner og raske svar.", "Enkle guider som sikrer reglene før eksamen."]
+              path: "traktor/teori"
+              callouts: ["Gårds-klar", "Raske svar", "Gratis leksjoner"]
+            da:
+              headlines: ["Bestå traktorteorien", "Mark- og vejregler", "45 traktorspørgsmål"]
+              descriptions: ["Dæk alle traktorscenarier med gratis lektioner og hurtige svar.", "Enkle guides der sikrer reglerne før prøven."]
+              path: "traktor/teori"
+              callouts: ["Markklar", "Hurtige svar", "Gratis lektioner"]
+        motorcycle:
+          languages:
+            en:
+              headlines: ["Crush the motorcycle theory exam", "MC practice app", "45 motorcycle scenarios"]
+              descriptions: ["Ride through realistic motorcycle cases with instant feedback and free lessons.", "Stay exam-ready with MC-focused drills and progress tracking."]
+              path: "mc/theory"
+              callouts: ["MC drills", "Instant feedback", "Free lessons"]
+            no:
+              headlines: ["Bestå motorsykkelteorien", "MC-øving", "45 MC-scenarier"]
+              descriptions: ["Kjør gjennom realistiske MC-scenarier med umiddelbar feedback.", "Hold deg prøveklar med MC-økter og fremdriftsmåling."]
+              path: "mc/teori"
+              callouts: ["MC-øvelser", "Feedback", "Gratis leksjoner"]
+            da:
+              headlines: ["Bestå motorcykelteorien", "MC-træning", "45 MC-scenarier"]
+              descriptions: ["Kør gennem realistiske MC-scenarier med øjeblikkelig feedback.", "Hold dig prøveklar med MC-øvelser og fremskridtsmåling."]
+              path: "mc/teori"
+              callouts: ["MC-øvelser", "Feedback", "Gratis lektioner"]
+        moped:
+          languages:
+            en:
+              headlines: ["Win the moped theory test", "Free moped lessons", "45 quick questions"]
+              descriptions: ["Practice fast with bite-sized questions, instant tips, and first-try focus.", "Daily moped drills that keep you confident before exam day."]
+              path: "moped/theory"
+              callouts: ["First try", "Quick drills", "Instant tips"]
+            no:
+              headlines: ["Bestå mopedteorien", "Gratis mopedleksjoner", "45 raske spørsmål"]
+              descriptions: ["Øv raskt med korte spørsmål, umiddelbare tips og fokus på første forsøk.", "Daglige mopedøkter som gir trygghet før prøven."]
+              path: "moped/teori"
+              callouts: ["Første forsøk", "Korte økter", "Umiddelbare tips"]
+            da:
+              headlines: ["Bestå knallertteorien", "Gratis knallertlektioner", "45 hurtige spørgsmål"]
+              descriptions: ["Træn hurtigt med korte spørgsmål, øjeblikkelige tips og fokus på første forsøg.", "Daglige knallertøvelser der giver ro før prøven."]
+              path: "knallert/teori"
+              callouts: ["Første forsøg", "Korte øvelser", "Øjeblikkelige tips"]
+        boat:
+          languages:
+            en:
+              headlines: ["Sail through the boat license test", "Boat theory drills", "45 navigation questions"]
+              descriptions: ["Navigate realistic boating rules with instant corrections and free lessons.", "Prep smarter with boat-specific quizzes and progress tracking."]
+              path: "boat/license"
+              callouts: ["Navigation drills", "Instant corrections", "Free lessons"]
+            no:
+              headlines: ["Bestå båtførerprøven", "Båtteoriøving", "45 navigasjonsspørsmål"]
+              descriptions: ["Naviger realistiske regler med umiddelbare korreksjoner og gratis teori.", "Forbered deg smartere med båtspecifikke quizzer og fremdrift."]
+              path: "batforerprove/teori"
+              callouts: ["Navigasjon", "Korreksjoner", "Gratis leksjoner"]
+            da:
+              headlines: ["Bestå speedbådscertifikatet", "Båtteori træning", "45 navigationsspørgsmål"]
+              descriptions: ["Naviger realistiske regler med øjeblikkelige rettelser og gratis teori.", "Forbered dig smartere med bådspecifikke quizzer og fremskridtssporing."]
+              path: "speedbad/teori"
+              callouts: ["Navigation", "Rettelser", "Gratis lektioner"]
+        trailer:
+          languages:
+            en:
+              headlines: ["Master the trailer endorsement", "BE practice app", "45 towing scenarios"]
+              descriptions: ["Handle trailer cases with supportive checklists and instant feedback.", "Build towing confidence fast with BE-focused drills."]
+              path: "trailer/be"
+              callouts: ["BE ready", "Checklists", "Instant feedback"]
+            no:
+              headlines: ["Bestå tilhengerteorien", "BE-trening", "45 trekk-scenarier"]
+              descriptions: ["Håndter tilhengerscenarier med sjekklister og umiddelbar feedback.", "Bygg trekk-selvtillit raskt med BE-økter."]
+              path: "tilhenger/be"
+              callouts: ["BE-klar", "Sjekklister", "Feedback"]
+            da:
+              headlines: ["Bestå trailerteorien", "BE-træning", "45 trækscenarier"]
+              descriptions: ["Håndter trailercases med tjeklister og øjeblikkelig feedback.", "Byg trækselvtillid hurtigt med BE-øvelser."]
+              path: "trailer/be"
+              callouts: ["BE-klar", "Tjeklister", "Feedback"]
