@@ -58,8 +58,10 @@ def convert_markdown_to_pdf(input_file, output_file):
 
 
 def add_signatures(input_pdf, output_pdf, sig1="Greg Taube", sig2="Ak"):
-    """Add signature lines to the bottom of the last page"""
+    """Add professional signature blocks to the bottom of the last page"""
     try:
+        from datetime import date
+
         # Read the input PDF
         reader = PdfReader(input_pdf)
         writer = PdfWriter()
@@ -73,20 +75,31 @@ def add_signatures(input_pdf, output_pdf, sig1="Greg Taube", sig2="Ak"):
         can = canvas.Canvas(packet, pagesize=A4)
 
         # Position signatures at the bottom
-        y_position = 3 * cm  # 3cm from bottom
+        y_position = 4 * cm  # 4cm from bottom
         x_left = 3 * cm      # Left signature
         x_right = 12 * cm    # Right signature
 
-        # Draw signature lines
-        line_width = 5 * cm
-        can.setLineWidth(0.5)
-        can.line(x_left, y_position, x_left + line_width, y_position)
-        can.line(x_right, y_position, x_right + line_width, y_position)
+        # Current date
+        today = date.today().strftime("%d.%m.%Y")
 
-        # Draw names under the lines
-        can.setFont("Helvetica", 10)
-        can.drawString(x_left, y_position - 0.5*cm, sig1)
-        can.drawString(x_right, y_position - 0.5*cm, sig2)
+        # Draw signature blocks for both signers
+        for x_pos, name in [(x_left, sig1), (x_right, sig2)]:
+            # Draw signature line
+            line_width = 5 * cm
+            can.setLineWidth(0.5)
+            can.line(x_pos, y_position, x_pos + line_width, y_position)
+
+            # Draw handwritten-style signature above the line
+            can.setFont("Times-Italic", 16)
+            can.drawString(x_pos + 0.2*cm, y_position + 0.3*cm, name)
+
+            # Draw printed name below the line
+            can.setFont("Helvetica", 9)
+            can.drawString(x_pos, y_position - 0.5*cm, name)
+
+            # Draw date below the name
+            can.setFont("Helvetica", 8)
+            can.drawString(x_pos, y_position - 1*cm, f"Dato: {today}")
 
         can.save()
         packet.seek(0)
