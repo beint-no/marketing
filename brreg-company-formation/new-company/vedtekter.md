@@ -1,12 +1,12 @@
-# VEDTEKTER for better integration
+# VEDTEKTER for Relative Pitch
 
 ## § 1 Navn
 
-Foreningens navn er **better integration**.
+Foreningens navn er **Relative Pitch**.
 
 ## § 2 Formål
 
-Å forbedre integreringen i Norge ved kurs, systemdrift og annen aktivitet som gjør det enklere å bli en del av det norske samfunnet.
+Å styrke musikk i samfunnet, spesielt med tanke på å utvikle gehør og andre musikalske evner gjennom kurs, aktiviteter og annen relevant virksomhet.
 
 ## § 3 Organisasjonsform
 

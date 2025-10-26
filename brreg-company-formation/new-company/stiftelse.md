@@ -1,6 +1,6 @@
 # STIFTELSESDOKUMENT
 
-for foreningen **better integration**
+for foreningen **Relative Pitch**
 
 **Dato:** 05.06.2025
 **Sted:** Oslo
@@ -10,13 +10,13 @@ for foreningen **better integration**
 | Navn | Adresse |
 |------|---------|
 | Greg Taube | Lørenvangen 23A, 0585 Oslo |
-| Arailym Kaliyeva | Lørenvangen 23A, 0585 Oslo |
+| Benjamin Taube | Lørenvangen 23A, 0585 Oslo |
 
 Greg Taube ble valgt som møteleder.
 
 Stiftelsesdokumentet med forslag til vedtekter ble lagt frem og enstemmig godkjent.
 
-Foreningen **better integration** ble dermed stiftet.
+Foreningen **Relative Pitch** ble dermed stiftet.
 
 ## 2. Kontingent
 
@@ -27,7 +27,7 @@ Foreningen **better integration** ble dermed stiftet.
 | Verv | Navn | Adresse |
 |------|------|---------|
 | Styreleder | Greg Taube | Lørenvangen 23A, 0585 Oslo |
-| Nestleder | Arailym Kaliyeva | Lørenvangen 23A, 0585 Oslo |
+| Nestleder | Benjamin Taube | Lørenvangen 23A, 0585 Oslo |
 
 Ingen varamedlemmer valgt.
 

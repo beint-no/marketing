@@ -2,7 +2,7 @@
 
 signaturrett – 05.06.2025
 
-Styret i **better integration** har i møte 05.06.2025 gjort følgende
+Styret i **Relative Pitch** har i møte 05.06.2025 gjort følgende
 
 ## Vedtak (enstemmig):
 

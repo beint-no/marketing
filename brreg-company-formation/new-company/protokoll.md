@@ -7,7 +7,7 @@ valg av styre – stiftelsesmøtet 05.06.2025
 
 ## Tilstede
 
-Greg Taube, Arailym Kaliyeva
+Greg Taube, Benjamin Taube
 
 ## Sak 1 – Møteleder
 
@@ -18,7 +18,7 @@ Greg Taube ble valgt.
 | Verv | Navn | Valgt for perioden |
 |------|------|-------------------|
 | Styreleder | Greg Taube | 05.06.2025 – 31.12.2026 |
-| Nestleder | Arailym Kaliyeva | 05.06.2025 – 31.12.2026 |
+| Nestleder | Benjamin Taube | 05.06.2025 – 31.12.2026 |
 
 **Vedtak:** Enstemmig.
 
