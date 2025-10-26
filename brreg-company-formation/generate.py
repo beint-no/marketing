@@ -130,7 +130,7 @@ def draw_handwritten_signature(can, x, y, name, style=1):
         can.drawPath(path, stroke=1, fill=0)
 
 
-def add_signatures(input_pdf, output_pdf, sig1="Greg Taube", sig2="Ak"):
+def add_signatures(input_pdf, output_pdf, sig1="GT", sig2="AK"):
     """Add professional signature blocks to the bottom of the last page"""
     try:
         from datetime import date
@@ -201,7 +201,7 @@ def add_signatures(input_pdf, output_pdf, sig1="Greg Taube", sig2="Ak"):
         return False
 
 
-def process_document(doc_type, company_dir, output_dir):
+def process_document(doc_type, company_dir, output_dir, sig1="GT", sig2="AK"):
     """Process a single markdown document"""
     input_file = company_dir / f"{doc_type}.md"
     temp_pdf = output_dir / f"{doc_type}_temp.pdf"
@@ -219,7 +219,7 @@ def process_document(doc_type, company_dir, output_dir):
         return False
 
     # Add signatures
-    if add_signatures(temp_pdf, final_pdf):
+    if add_signatures(temp_pdf, final_pdf, sig1, sig2):
         temp_pdf.unlink()  # Remove temp file
         print_color(f"✓ Generated {final_pdf}", Colors.GREEN)
         print()
@@ -237,6 +237,10 @@ def main():
     # Always use new-company directory
     company_dir = Path("new-company")
 
+    # Get initials from command line arguments, default to GT and AK
+    sig1 = sys.argv[1] if len(sys.argv) > 1 else "GT"
+    sig2 = sys.argv[2] if len(sys.argv) > 2 else "AK"
+
     # Check if company directory exists
     if not company_dir.exists() or not company_dir.is_dir():
         print_color(f"Error: Directory '{company_dir}' does not exist", Colors.RED)
@@ -247,6 +251,7 @@ def main():
     output_dir.mkdir(exist_ok=True)
 
     print_color("=== Company Formation Document Generator ===", Colors.GREEN)
+    print_color(f"Signatures: {sig1} and {sig2}", Colors.GREEN)
     print()
 
     # Process all document types
@@ -254,7 +259,7 @@ def main():
     generated = []
 
     for doc_type in documents:
-        if process_document(doc_type, company_dir, output_dir):
+        if process_document(doc_type, company_dir, output_dir, sig1, sig2):
             generated.append(doc_type)
 
     print_color("=== Generation Complete ===", Colors.GREEN)
