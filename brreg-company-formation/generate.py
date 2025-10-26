@@ -59,30 +59,42 @@ def convert_markdown_to_pdf(input_file, output_file):
 
 def draw_handwritten_signature(can, x, y, name, style=1):
     """Draw a realistic handwritten signature using bezier curves"""
-    can.setLineWidth(1.2)
-    can.setStrokeColorRGB(0, 0, 0.5)  # Dark blue ink color
+    can.setLineWidth(1.5)
+    can.setStrokeColorRGB(0.1, 0.1, 0.4)  # Dark blue ink color
 
-    if style == 1:  # Greg Taube style - flowing cursive
-        # Draw "Greg" with flowing curves
+    if style == 1:  # GT style - elegant connected initials
+        # Draw "G" with flowing curves
         path = can.beginPath()
-        path.moveTo(x, y)
-        path.curveTo(x + 0.3*cm, y + 0.6*cm, x + 0.7*cm, y + 0.8*cm, x + 1*cm, y + 0.5*cm)
-        path.curveTo(x + 1.2*cm, y + 0.3*cm, x + 1.3*cm, y, x + 1.5*cm, y + 0.2*cm)
-        path.lineTo(x + 1.7*cm, y + 0.1*cm)
+        # Start of G - curved top
+        path.moveTo(x + 1.2*cm, y + 0.8*cm)
+        path.curveTo(x + 0.6*cm, y + 0.9*cm, x + 0.2*cm, y + 0.5*cm, x + 0.2*cm, y + 0.2*cm)
+        # Left side going down
+        path.curveTo(x + 0.2*cm, y - 0.2*cm, x + 0.5*cm, y - 0.4*cm, x + 0.9*cm, y - 0.3*cm)
+        # Bottom curve
+        path.curveTo(x + 1.1*cm, y - 0.25*cm, x + 1.2*cm, y - 0.1*cm, x + 1.2*cm, y + 0.1*cm)
+        # Inner horizontal line
+        path.lineTo(x + 0.8*cm, y + 0.1*cm)
         can.drawPath(path, stroke=1, fill=0)
 
-        # Draw "Taube" with elegant loops
+        # Draw "T" connected to G with a flowing stroke
         path = can.beginPath()
-        path.moveTo(x + 1.9*cm, y + 0.3*cm)
-        path.curveTo(x + 2.1*cm, y + 0.7*cm, x + 2.5*cm, y + 0.6*cm, x + 2.8*cm, y + 0.2*cm)
-        path.curveTo(x + 3*cm, y - 0.1*cm, x + 3.2*cm, y + 0.3*cm, x + 3.5*cm, y + 0.4*cm)
-        path.curveTo(x + 3.8*cm, y + 0.5*cm, x + 4*cm, y + 0.2*cm, x + 4.2*cm, y)
+        # Connection from G to T
+        path.moveTo(x + 1.3*cm, y + 0.5*cm)
+        # Top of T (horizontal bar)
+        path.curveTo(x + 1.5*cm, y + 0.7*cm, x + 1.8*cm, y + 0.85*cm, x + 2.3*cm, y + 0.8*cm)
         can.drawPath(path, stroke=1, fill=0)
 
-        # Add an elegant underline flourish
+        # Vertical stroke of T
         path = can.beginPath()
-        path.moveTo(x + 0.5*cm, y - 0.2*cm)
-        path.curveTo(x + 1.5*cm, y - 0.4*cm, x + 2.5*cm, y - 0.3*cm, x + 3.5*cm, y - 0.1*cm)
+        path.moveTo(x + 1.8*cm, y + 0.8*cm)
+        path.curveTo(x + 1.75*cm, y + 0.4*cm, x + 1.7*cm, y, x + 1.65*cm, y - 0.4*cm)
+        can.drawPath(path, stroke=1, fill=0)
+
+        # Add elegant underline flourish
+        can.setLineWidth(1.0)
+        path = can.beginPath()
+        path.moveTo(x + 0.3*cm, y - 0.5*cm)
+        path.curveTo(x + 0.8*cm, y - 0.65*cm, x + 1.5*cm, y - 0.6*cm, x + 2.2*cm, y - 0.4*cm)
         can.drawPath(path, stroke=1, fill=0)
 
     else:  # Ak style - compact and bold
