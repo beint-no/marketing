@@ -7,10 +7,10 @@ for foreningen **Relative Pitch**
 
 ## 1. Stiftere som var til stede
 
-| Navn | Adresse |
-|------|---------|
-| Greg Taube | Lørenvangen 23A, 0585 Oslo |
-| Benjamin Taube | Lørenvangen 23A, 0585 Oslo |
+| Navn | Adresse                                                       |
+|------|---------------------------------------------------------------|
+| Greg Taube | Lørenvangen 23A, 0585 Oslo, gregjotau@gmail.com, +47 47958629 | 
+| Benjamin Taube | Lørenvangen 23A, 0585 Oslo                                    |
 
 Greg Taube ble valgt som møteleder.
 
