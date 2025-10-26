@@ -57,6 +57,68 @@ def convert_markdown_to_pdf(input_file, output_file):
         return False
 
 
+def draw_handwritten_signature(can, x, y, name, style=1):
+    """Draw a realistic handwritten signature using bezier curves"""
+    can.setLineWidth(1.2)
+    can.setStrokeColorRGB(0, 0, 0.5)  # Dark blue ink color
+
+    if style == 1:  # Greg Taube style - flowing cursive
+        # Draw "Greg" with flowing curves
+        path = can.beginPath()
+        path.moveTo(x, y)
+        path.curveTo(x + 0.3*cm, y + 0.6*cm, x + 0.7*cm, y + 0.8*cm, x + 1*cm, y + 0.5*cm)
+        path.curveTo(x + 1.2*cm, y + 0.3*cm, x + 1.3*cm, y, x + 1.5*cm, y + 0.2*cm)
+        path.lineTo(x + 1.7*cm, y + 0.1*cm)
+        can.drawPath(path, stroke=1, fill=0)
+
+        # Draw "Taube" with elegant loops
+        path = can.beginPath()
+        path.moveTo(x + 1.9*cm, y + 0.3*cm)
+        path.curveTo(x + 2.1*cm, y + 0.7*cm, x + 2.5*cm, y + 0.6*cm, x + 2.8*cm, y + 0.2*cm)
+        path.curveTo(x + 3*cm, y - 0.1*cm, x + 3.2*cm, y + 0.3*cm, x + 3.5*cm, y + 0.4*cm)
+        path.curveTo(x + 3.8*cm, y + 0.5*cm, x + 4*cm, y + 0.2*cm, x + 4.2*cm, y)
+        can.drawPath(path, stroke=1, fill=0)
+
+        # Add an elegant underline flourish
+        path = can.beginPath()
+        path.moveTo(x + 0.5*cm, y - 0.2*cm)
+        path.curveTo(x + 1.5*cm, y - 0.4*cm, x + 2.5*cm, y - 0.3*cm, x + 3.5*cm, y - 0.1*cm)
+        can.drawPath(path, stroke=1, fill=0)
+
+    else:  # Ak style - compact and bold
+        # Draw stylized "A"
+        path = can.beginPath()
+        path.moveTo(x, y)
+        path.lineTo(x + 0.4*cm, y + 0.7*cm)
+        path.lineTo(x + 0.8*cm, y)
+        can.drawPath(path, stroke=1, fill=0)
+
+        # Cross bar for A
+        can.line(x + 0.2*cm, y + 0.35*cm, x + 0.6*cm, y + 0.35*cm)
+
+        # Draw stylized "k"
+        path = can.beginPath()
+        path.moveTo(x + 1*cm, y + 0.6*cm)
+        path.lineTo(x + 1*cm, y)
+        can.drawPath(path, stroke=1, fill=0)
+
+        path = can.beginPath()
+        path.moveTo(x + 1*cm, y + 0.3*cm)
+        path.lineTo(x + 1.4*cm, y + 0.6*cm)
+        can.drawPath(path, stroke=1, fill=0)
+
+        path = can.beginPath()
+        path.moveTo(x + 1*cm, y + 0.3*cm)
+        path.lineTo(x + 1.4*cm, y)
+        can.drawPath(path, stroke=1, fill=0)
+
+        # Add underline flourish
+        path = can.beginPath()
+        path.moveTo(x, y - 0.2*cm)
+        path.curveTo(x + 0.5*cm, y - 0.35*cm, x + 1*cm, y - 0.25*cm, x + 1.5*cm, y - 0.15*cm)
+        can.drawPath(path, stroke=1, fill=0)
+
+
 def add_signatures(input_pdf, output_pdf, sig1="Greg Taube", sig2="Ak"):
     """Add professional signature blocks to the bottom of the last page"""
     try:
@@ -82,18 +144,21 @@ def add_signatures(input_pdf, output_pdf, sig1="Greg Taube", sig2="Ak"):
         # Current date
         today = date.today().strftime("%d.%m.%Y")
 
-        # Draw signature blocks for both signers
-        for x_pos, name in [(x_left, sig1), (x_right, sig2)]:
+        # Draw signature blocks
+        signatures = [(x_left, sig1, 1), (x_right, sig2, 2)]
+
+        for x_pos, name, style in signatures:
             # Draw signature line
             line_width = 5 * cm
+            can.setStrokeColorRGB(0, 0, 0)
             can.setLineWidth(0.5)
             can.line(x_pos, y_position, x_pos + line_width, y_position)
 
-            # Draw handwritten-style signature above the line
-            can.setFont("Times-Italic", 16)
-            can.drawString(x_pos + 0.2*cm, y_position + 0.3*cm, name)
+            # Draw handwritten signature above the line
+            draw_handwritten_signature(can, x_pos + 0.3*cm, y_position + 0.5*cm, name, style)
 
             # Draw printed name below the line
+            can.setFillColorRGB(0, 0, 0)
             can.setFont("Helvetica", 9)
             can.drawString(x_pos, y_position - 0.5*cm, name)
 
