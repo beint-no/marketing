@@ -58,76 +58,44 @@ def convert_markdown_to_pdf(input_file, output_file):
 
 
 def draw_handwritten_signature(can, x, y, name, style=1):
-    """Draw a realistic handwritten signature using bezier curves"""
+    """Draw a realistic handwritten signature using script font"""
 
-    if style == 1:  # GT style - elegant flowing cursive
+    if style == 1:  # Style 1 - elegant flowing cursive
+        can.setFillColorRGB(0.1, 0.1, 0.4)  # Dark blue ink color
+        can.setFont("Times-Italic", 18)
+
+        # Draw signature with slight slant
+        can.saveState()
+        can.translate(x, y)
+        can.skew(0, 15)  # Slant the text
+        can.drawString(0, 0, name)
+        can.restoreState()
+
+        # Add a subtle flourish underneath
+        can.setLineWidth(1.0)
+        can.setStrokeColorRGB(0.1, 0.1, 0.4)
+        path = can.beginPath()
+        text_width = len(name) * 0.45 * cm  # Approximate text width
+        path.moveTo(x, y - 0.1*cm)
+        path.curveTo(x + text_width*0.3, y - 0.25*cm, x + text_width*0.6, y - 0.2*cm, x + text_width*0.9, y - 0.05*cm)
+        can.drawPath(path, stroke=1, fill=0)
+
+    else:  # Style 2 - bold angular script
+        can.setFillColorRGB(0, 0, 0)  # Black ink
+        can.setFont("Helvetica-Bold", 16)
+
+        # Draw signature with different slant
+        can.saveState()
+        can.translate(x, y)
+        can.skew(0, 10)  # Different slant angle
+        can.drawString(0, 0, name)
+        can.restoreState()
+
+        # Add a bold underline flourish
         can.setLineWidth(1.5)
-        can.setStrokeColorRGB(0.1, 0.1, 0.4)  # Dark blue ink color
-
-        # Draw "G" with flowing curves
-        path = can.beginPath()
-        # Start of G - curved top
-        path.moveTo(x + 1.2*cm, y + 0.8*cm)
-        path.curveTo(x + 0.6*cm, y + 0.9*cm, x + 0.2*cm, y + 0.5*cm, x + 0.2*cm, y + 0.2*cm)
-        # Left side going down
-        path.curveTo(x + 0.2*cm, y - 0.2*cm, x + 0.5*cm, y - 0.4*cm, x + 0.9*cm, y - 0.3*cm)
-        # Bottom curve
-        path.curveTo(x + 1.1*cm, y - 0.25*cm, x + 1.2*cm, y - 0.1*cm, x + 1.2*cm, y + 0.1*cm)
-        # Inner horizontal line
-        path.lineTo(x + 0.8*cm, y + 0.1*cm)
-        can.drawPath(path, stroke=1, fill=0)
-
-        # Draw "T" connected to G with a flowing stroke
-        path = can.beginPath()
-        # Connection from G to T
-        path.moveTo(x + 1.3*cm, y + 0.5*cm)
-        # Top of T (horizontal bar)
-        path.curveTo(x + 1.5*cm, y + 0.7*cm, x + 1.8*cm, y + 0.85*cm, x + 2.3*cm, y + 0.8*cm)
-        can.drawPath(path, stroke=1, fill=0)
-
-        # Vertical stroke of T
-        path = can.beginPath()
-        path.moveTo(x + 1.8*cm, y + 0.8*cm)
-        path.curveTo(x + 1.75*cm, y + 0.4*cm, x + 1.7*cm, y, x + 1.65*cm, y - 0.4*cm)
-        can.drawPath(path, stroke=1, fill=0)
-
-    else:  # Ak style - bold angular script
-        can.setLineWidth(2.0)  # Thicker, bolder strokes
-        can.setStrokeColorRGB(0, 0, 0)  # Black ink
-
-        # Draw "A" with sharp angles and flourish
-        path = can.beginPath()
-        # Left stroke of A
-        path.moveTo(x + 0.1*cm, y - 0.1*cm)
-        path.lineTo(x + 0.5*cm, y + 0.8*cm)
-        # Right stroke of A
-        path.lineTo(x + 0.9*cm, y - 0.1*cm)
-        can.drawPath(path, stroke=1, fill=0)
-
-        # Cross bar for A with slight curve
-        path = can.beginPath()
-        path.moveTo(x + 0.25*cm, y + 0.3*cm)
-        path.curveTo(x + 0.4*cm, y + 0.35*cm, x + 0.55*cm, y + 0.35*cm, x + 0.7*cm, y + 0.3*cm)
-        can.drawPath(path, stroke=1, fill=0)
-
-        # Draw "k" with flowing strokes
-        # Vertical line of k
-        path = can.beginPath()
-        path.moveTo(x + 1.1*cm, y + 0.7*cm)
-        path.lineTo(x + 1.1*cm, y - 0.15*cm)
-        can.drawPath(path, stroke=1, fill=0)
-
-        # Upper arm of k with curve
-        path = can.beginPath()
-        path.moveTo(x + 1.1*cm, y + 0.35*cm)
-        path.curveTo(x + 1.3*cm, y + 0.5*cm, x + 1.45*cm, y + 0.65*cm, x + 1.6*cm, y + 0.7*cm)
-        can.drawPath(path, stroke=1, fill=0)
-
-        # Lower arm of k with curve
-        path = can.beginPath()
-        path.moveTo(x + 1.1*cm, y + 0.25*cm)
-        path.curveTo(x + 1.3*cm, y + 0.15*cm, x + 1.45*cm, y + 0.05*cm, x + 1.6*cm, y - 0.1*cm)
-        can.drawPath(path, stroke=1, fill=0)
+        can.setStrokeColorRGB(0, 0, 0)
+        text_width = len(name) * 0.45 * cm  # Approximate text width
+        can.line(x, y - 0.15*cm, x + text_width*0.85, y - 0.15*cm)
 
 
 def add_signatures(input_pdf, output_pdf, sig1="GT", sig2="AK"):
