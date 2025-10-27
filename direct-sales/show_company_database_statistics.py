@@ -91,7 +91,7 @@ def display_company_database_statistics():
 
         for csv_file in csv_files:
             try:
-                csv_dataframe = pd.read_csv(csv_file)
+                csv_dataframe = pd.read_csv(csv_file, low_memory=False)
                 company_count = len(csv_dataframe)
 
                 letter_bucket = csv_file.stem  # A, B, C, ..., Z, OTHER

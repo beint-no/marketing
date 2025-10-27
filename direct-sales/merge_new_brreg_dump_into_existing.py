@@ -69,7 +69,7 @@ def load_all_existing_organisation_numbers(companies_directory: Path) -> set:
         # Iterate through all letter CSV files
         for csv_file in organisation_form_directory.glob("*.csv"):
             try:
-                csv_dataframe = pd.read_csv(csv_file)
+                csv_dataframe = pd.read_csv(csv_file, low_memory=False)
                 if "organisasjonsnummer" in csv_dataframe.columns:
                     # Add all org numbers from this file to the set
                     existing_organisation_numbers.update(
@@ -106,7 +106,7 @@ def merge_new_companies_into_existing_structure():
 
     # Load new dump
     print(f"📂 Loading new dump from {new_dump_csv_path}...")
-    new_companies_dataframe = pd.read_csv(new_dump_csv_path)
+    new_companies_dataframe = pd.read_csv(new_dump_csv_path, low_memory=False)
 
     # Validate required columns exist
     required_columns = ["organisasjonsform.kode", "navn", "organisasjonsnummer"]
@@ -165,7 +165,7 @@ def merge_new_companies_into_existing_structure():
 
             if csv_file_path.exists():
                 # Append to existing file
-                existing_csv_dataframe = pd.read_csv(csv_file_path)
+                existing_csv_dataframe = pd.read_csv(csv_file_path, low_memory=False)
                 merged_dataframe = pd.concat(
                     [existing_csv_dataframe, new_companies_dataframe_subset],
                     ignore_index=True

@@ -70,7 +70,7 @@ def split_brreg_dump_into_subdivided_csvs():
 
     # Load CSV
     print(f"📂 Loading {input_csv_path}...")
-    companies_dataframe = pd.read_csv(input_csv_path)
+    companies_dataframe = pd.read_csv(input_csv_path, low_memory=False)
 
     # Validate required columns exist
     required_columns = ["organisasjonsform.kode", "navn"]
