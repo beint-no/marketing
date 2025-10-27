@@ -120,6 +120,13 @@ def merge_new_companies_into_existing_structure():
     new_companies_dataframe["navn"] = new_companies_dataframe["navn"].fillna("UNKNOWN")
     new_companies_dataframe["organisasjonsnummer"] = new_companies_dataframe["organisasjonsnummer"].astype(str)
 
+    # Filter out bankrupt companies (konkurs = True)
+    original_count = len(new_companies_dataframe)
+    if "konkurs" in new_companies_dataframe.columns:
+        new_companies_dataframe = new_companies_dataframe[new_companies_dataframe["konkurs"] != True]
+        bankrupt_count = original_count - len(new_companies_dataframe)
+        print(f"🚫 Filtered out {bankrupt_count:,} bankrupt companies (konkurs=True)")
+
     # Load all existing organisation numbers
     print(f"🔍 Scanning existing companies/ directory...")
     existing_organisation_numbers = load_all_existing_organisation_numbers(companies_directory)

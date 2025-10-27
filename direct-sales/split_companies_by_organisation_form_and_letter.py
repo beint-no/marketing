@@ -83,6 +83,13 @@ def split_brreg_dump_into_subdivided_csvs():
     companies_dataframe["organisasjonsform.kode"] = companies_dataframe["organisasjonsform.kode"].fillna("UNKNOWN")
     companies_dataframe["navn"] = companies_dataframe["navn"].fillna("UNKNOWN")
 
+    # Filter out bankrupt companies (konkurs = True)
+    original_count = len(companies_dataframe)
+    if "konkurs" in companies_dataframe.columns:
+        companies_dataframe = companies_dataframe[companies_dataframe["konkurs"] != True]
+        bankrupt_count = original_count - len(companies_dataframe)
+        print(f"🚫 Filtered out {bankrupt_count:,} bankrupt companies (konkurs=True)")
+
     # Display processing info
     total_companies = len(companies_dataframe)
     organisation_forms = sorted(companies_dataframe["organisasjonsform.kode"].unique())
