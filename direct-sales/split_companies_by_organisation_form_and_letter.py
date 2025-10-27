@@ -90,6 +90,24 @@ def split_brreg_dump_into_subdivided_csvs():
         bankrupt_count = original_count - len(companies_dataframe)
         print(f"🚫 Filtered out {bankrupt_count:,} bankrupt companies (konkurs=True)")
 
+    # Select only relevant columns for output
+    columns_to_keep = [
+        "organisasjonsnummer",
+        "navn",
+        "organisasjonsform.kode",
+        "antallAnsatte",
+        "hjemmeside",
+        "epostadresse",
+        "telefon",
+        "mobil",
+        "erIKonsern"
+    ]
+
+    # Only keep columns that exist in the dataframe
+    available_columns = [col for col in columns_to_keep if col in companies_dataframe.columns]
+    companies_dataframe = companies_dataframe[available_columns]
+    print(f"📋 Keeping {len(available_columns)} columns: {', '.join(available_columns)}")
+
     # Display processing info
     total_companies = len(companies_dataframe)
     organisation_forms = sorted(companies_dataframe["organisasjonsform.kode"].unique())

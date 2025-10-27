@@ -127,6 +127,24 @@ def merge_new_companies_into_existing_structure():
         bankrupt_count = original_count - len(new_companies_dataframe)
         print(f"🚫 Filtered out {bankrupt_count:,} bankrupt companies (konkurs=True)")
 
+    # Select only relevant columns for output
+    columns_to_keep = [
+        "organisasjonsnummer",
+        "navn",
+        "organisasjonsform.kode",
+        "antallAnsatte",
+        "hjemmeside",
+        "epostadresse",
+        "telefon",
+        "mobil",
+        "erIKonsern"
+    ]
+
+    # Only keep columns that exist in the dataframe
+    available_columns = [col for col in columns_to_keep if col in new_companies_dataframe.columns]
+    new_companies_dataframe = new_companies_dataframe[available_columns]
+    print(f"📋 Keeping {len(available_columns)} columns: {', '.join(available_columns)}")
+
     # Load all existing organisation numbers
     print(f"🔍 Scanning existing companies/ directory...")
     existing_organisation_numbers = load_all_existing_organisation_numbers(companies_directory)
