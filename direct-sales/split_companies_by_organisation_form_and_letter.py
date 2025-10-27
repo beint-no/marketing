@@ -83,6 +83,15 @@ def split_brreg_dump_into_subdivided_csvs():
     companies_dataframe["organisasjonsform.kode"] = companies_dataframe["organisasjonsform.kode"].fillna("UNKNOWN")
     companies_dataframe["navn"] = companies_dataframe["navn"].fillna("UNKNOWN")
 
+    # Filter to only include ENK, AS, and FLI organization types
+    allowed_organisation_forms = ["ENK", "AS", "FLI"]
+    original_count_before_filter = len(companies_dataframe)
+    companies_dataframe = companies_dataframe[
+        companies_dataframe["organisasjonsform.kode"].isin(allowed_organisation_forms)
+    ]
+    filtered_out_count = original_count_before_filter - len(companies_dataframe)
+    print(f"🎯 Filtered to only ENK, AS, FLI: {len(companies_dataframe):,} companies ({filtered_out_count:,} other types excluded)")
+
     # Filter out bankrupt companies (konkurs = True)
     original_count = len(companies_dataframe)
     if "konkurs" in companies_dataframe.columns:
@@ -90,11 +99,10 @@ def split_brreg_dump_into_subdivided_csvs():
         bankrupt_count = original_count - len(companies_dataframe)
         print(f"🚫 Filtered out {bankrupt_count:,} bankrupt companies (konkurs=True)")
 
-    # Select only relevant columns for output
-    columns_to_keep = [
+    # Define columns to keep in output (excluding organisasjonsform.kode since it's in folder structure)
+    output_columns = [
         "organisasjonsnummer",
         "navn",
-        "organisasjonsform.kode",
         "antallAnsatte",
         "hjemmeside",
         "epostadresse",
@@ -104,9 +112,8 @@ def split_brreg_dump_into_subdivided_csvs():
     ]
 
     # Only keep columns that exist in the dataframe
-    available_columns = [col for col in columns_to_keep if col in companies_dataframe.columns]
-    companies_dataframe = companies_dataframe[available_columns]
-    print(f"📋 Keeping {len(available_columns)} columns: {', '.join(available_columns)}")
+    available_output_columns = [col for col in output_columns if col in companies_dataframe.columns]
+    print(f"📋 Keeping {len(available_output_columns)} columns: {', '.join(available_output_columns)}")
 
     # Display processing info
     total_companies = len(companies_dataframe)
@@ -140,6 +147,8 @@ def split_brreg_dump_into_subdivided_csvs():
         # Write each letter group to its own CSV file
         for letter, company_rows in sorted(companies_by_letter.items()):
             letter_dataframe = pd.DataFrame(company_rows)
+            # Only keep output columns (exclude organisasjonsform.kode)
+            letter_dataframe = letter_dataframe[available_output_columns]
             output_csv_file = organisation_form_directory / f"{letter}.csv"
             letter_dataframe.to_csv(output_csv_file, index=False)
 
