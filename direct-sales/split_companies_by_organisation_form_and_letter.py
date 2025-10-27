@@ -99,21 +99,20 @@ def split_brreg_dump_into_subdivided_csvs():
         bankrupt_count = original_count - len(companies_dataframe)
         print(f"🚫 Filtered out {bankrupt_count:,} bankrupt companies (konkurs=True)")
 
-    # Define columns to keep in output (excluding organisasjonsform.kode since it's in folder structure)
-    output_columns = [
+    # Define base columns to keep (excluding organisasjonsform.kode since it's in folder structure)
+    base_output_columns = [
         "organisasjonsnummer",
         "navn",
-        "antallAnsatte",
         "hjemmeside",
         "epostadresse",
         "telefon",
         "mobil",
-        "erIKonsern"
+        "erIKonsern",
+        "antallAnsatte"
     ]
 
-    # Only keep columns that exist in the dataframe
-    available_output_columns = [col for col in output_columns if col in companies_dataframe.columns]
-    print(f"📋 Keeping {len(available_output_columns)} columns: {', '.join(available_output_columns)}")
+    # FLI gets an additional column
+    fli_extra_columns = ["registrertIForetaksregisteret"]
 
     # Display processing info
     total_companies = len(companies_dataframe)
@@ -144,11 +143,20 @@ def split_brreg_dump_into_subdivided_csvs():
 
             companies_by_letter[letter_bucket].append(company_row)
 
+        # Determine which columns to keep for this organisation form
+        if organisation_form == "FLI":
+            columns_to_keep = base_output_columns + fli_extra_columns
+        else:
+            columns_to_keep = base_output_columns
+
+        # Only keep columns that exist in the dataframe
+        available_columns = [col for col in columns_to_keep if col in companies_dataframe.columns]
+
         # Write each letter group to its own CSV file
         for letter, company_rows in sorted(companies_by_letter.items()):
             letter_dataframe = pd.DataFrame(company_rows)
-            # Only keep output columns (exclude organisasjonsform.kode)
-            letter_dataframe = letter_dataframe[available_output_columns]
+            # Only keep output columns for this organisation form
+            letter_dataframe = letter_dataframe[available_columns]
             output_csv_file = organisation_form_directory / f"{letter}.csv"
             letter_dataframe.to_csv(output_csv_file, index=False)
 

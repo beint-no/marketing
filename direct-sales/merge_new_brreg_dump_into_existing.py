@@ -120,6 +120,15 @@ def merge_new_companies_into_existing_structure():
     new_companies_dataframe["navn"] = new_companies_dataframe["navn"].fillna("UNKNOWN")
     new_companies_dataframe["organisasjonsnummer"] = new_companies_dataframe["organisasjonsnummer"].astype(str)
 
+    # Filter to only include ENK, AS, and FLI organization types
+    allowed_organisation_forms = ["ENK", "AS", "FLI"]
+    original_count_before_filter = len(new_companies_dataframe)
+    new_companies_dataframe = new_companies_dataframe[
+        new_companies_dataframe["organisasjonsform.kode"].isin(allowed_organisation_forms)
+    ]
+    filtered_out_count = original_count_before_filter - len(new_companies_dataframe)
+    print(f"🎯 Filtered to only ENK, AS, FLI: {len(new_companies_dataframe):,} companies ({filtered_out_count:,} other types excluded)")
+
     # Filter out bankrupt companies (konkurs = True)
     original_count = len(new_companies_dataframe)
     if "konkurs" in new_companies_dataframe.columns:
@@ -127,21 +136,20 @@ def merge_new_companies_into_existing_structure():
         bankrupt_count = original_count - len(new_companies_dataframe)
         print(f"🚫 Filtered out {bankrupt_count:,} bankrupt companies (konkurs=True)")
 
-    # Define columns to keep in output (excluding organisasjonsform.kode since it's in folder structure)
-    output_columns = [
+    # Define base columns to keep (excluding organisasjonsform.kode since it's in folder structure)
+    base_output_columns = [
         "organisasjonsnummer",
         "navn",
-        "antallAnsatte",
         "hjemmeside",
         "epostadresse",
         "telefon",
         "mobil",
-        "erIKonsern"
+        "erIKonsern",
+        "antallAnsatte"
     ]
 
-    # Only keep columns that exist in the dataframe
-    available_output_columns = [col for col in output_columns if col in new_companies_dataframe.columns]
-    print(f"📋 Keeping {len(available_output_columns)} columns: {', '.join(available_output_columns)}")
+    # FLI gets an additional column
+    fli_extra_columns = ["registrertIForetaksregisteret"]
 
     # Load all existing organisation numbers
     print(f"🔍 Scanning existing companies/ directory...")
@@ -181,12 +189,21 @@ def merge_new_companies_into_existing_structure():
 
             companies_by_letter[letter_bucket].append(company_row)
 
+        # Determine which columns to keep for this organisation form
+        if organisation_form == "FLI":
+            columns_to_keep = base_output_columns + fli_extra_columns
+        else:
+            columns_to_keep = base_output_columns
+
+        # Only keep columns that exist in the dataframe
+        available_columns = [col for col in columns_to_keep if col in new_companies_dataframe.columns]
+
         # Append to existing CSVs (or create new if doesn't exist)
         for letter, new_company_rows in companies_by_letter.items():
             csv_file_path = organisation_form_directory / f"{letter}.csv"
             new_companies_dataframe_subset = pd.DataFrame(new_company_rows)
-            # Only keep output columns (exclude organisasjonsform.kode)
-            new_companies_dataframe_subset = new_companies_dataframe_subset[available_output_columns]
+            # Only keep output columns for this organisation form
+            new_companies_dataframe_subset = new_companies_dataframe_subset[available_columns]
 
             if csv_file_path.exists():
                 # Append to existing file
